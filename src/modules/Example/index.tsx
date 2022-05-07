@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { useTheme } from "../../packages/theme";
 import { Button, ButtonGroup } from "../../packages/theme/components";
+import TextField from "../../packages/theme/components/TextField";
 
 const Example: FunctionComponent = () => {
   const theme = useTheme();
@@ -11,6 +12,35 @@ const Example: FunctionComponent = () => {
 
   return (
     <div style={{ marginTop: theme.spaces[2], width: 800, margin: "0 auto" }}>
+      <h2>Inputs</h2>
+      <h3>Intents</h3>
+      <p>
+        <TextField label="Default" placeholder="Default input" />
+      </p>
+      <p>
+        <TextField
+          label="Success"
+          placeholder="Success input"
+          intent="success"
+        />
+      </p>
+      <p>
+        <TextField label="Error" placeholder="Error input" intent="error" />
+      </p>
+      <p>
+        <TextField label="Disabled" placeholder="Disabled input" disabled />
+      </p>
+      <h3>Sizes</h3>
+      <p>
+        <TextField label="Small" placeholder="Small input" size="small" />
+      </p>
+      <p>
+        <TextField label="Medium" placeholder="Medium input" size="medium" />
+      </p>
+      <p>
+        <TextField label="Large" placeholder="Large input" size="large" />
+      </p>
+
       <h2>Buttons</h2>
       <h3>Intents</h3>
       <ButtonGroup>
