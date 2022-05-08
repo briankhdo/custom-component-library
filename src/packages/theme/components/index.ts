@@ -1,4 +1,4 @@
 import Button from "./Button";
-import ButtonGroup from "./ButtonGroup";
+import ElementGroup from "./ElementGroup";
 
-export { Button, ButtonGroup };
+export { Button, ElementGroup };

@@ -1,8 +1,9 @@
-import { FunctionComponent, ReactNode } from "react";
+import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from "react";
 import styled, { css } from "styled-components";
 import { themeGet } from "../..";
 
-interface ButtonProps {
+interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "size" | "prefix"> {
   children?: ReactNode;
   text?: string;
   size?: "small" | "medium" | "large";
@@ -48,14 +49,16 @@ const StyledButton = styled.button<{
       }
     `};
 `;
+
 const Button: FunctionComponent<ButtonProps> = ({
   children,
   text,
   size,
   intent,
   onClick,
+  ...inputAttrs
 }: ButtonProps) => (
-  <StyledButton onClick={onClick} intent={intent} size={size}>
+  <StyledButton onClick={onClick} intent={intent} size={size} {...inputAttrs}>
     {text || children}
   </StyledButton>
 );

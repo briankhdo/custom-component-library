@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import { useTheme } from "../../packages/theme";
-import { Button, ButtonGroup } from "../../packages/theme/components";
+import { Button, ElementGroup } from "../../packages/theme/components";
+import Popover from "../../packages/theme/components/Popover";
 import TextField from "../../packages/theme/components/TextField";
 
 const Example: FunctionComponent = () => {
@@ -43,7 +44,7 @@ const Example: FunctionComponent = () => {
 
       <h2>Buttons</h2>
       <h3>Intents</h3>
-      <ButtonGroup>
+      <ElementGroup>
         <Button
           text="Default"
           onClick={(e) => buttonClicked(e.currentTarget.innerHTML)}
@@ -63,10 +64,10 @@ const Example: FunctionComponent = () => {
           intent={"error"}
           onClick={(e) => buttonClicked(e.currentTarget.innerHTML)}
         />
-      </ButtonGroup>
+      </ElementGroup>
 
       <h3>Sizes</h3>
-      <ButtonGroup>
+      <ElementGroup>
         <Button
           text="Small"
           size={"small"}
@@ -82,7 +83,26 @@ const Example: FunctionComponent = () => {
           size={"large"}
           onClick={(e) => buttonClicked(e.currentTarget.innerHTML)}
         />
-      </ButtonGroup>
+      </ElementGroup>
+
+      <h3>Popover</h3>
+      <ElementGroup>
+        <Popover trigger="click" component={<Button text="Click me" />}>
+          <span>Xin chào</span>
+          {` `}
+          <a href="https://google.com" target="_blank" rel="noreferrer">
+            Google
+          </a>
+        </Popover>
+
+        <Popover trigger="hover" component={<Button text="Hover me" />}>
+          <span>Xin chào</span>
+          {` `}
+          <a href="https://youtube.com" target="_blank" rel="noreferrer">
+            YouTube
+          </a>
+        </Popover>
+      </ElementGroup>
     </div>
   );
 };

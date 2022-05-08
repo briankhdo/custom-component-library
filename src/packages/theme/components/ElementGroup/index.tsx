@@ -1,17 +1,17 @@
 import { FunctionComponent, ReactNode } from "react";
 import styled from "styled-components";
 
-interface ButtonProps {
+interface ElementGroupProps {
   children?: ReactNode;
 }
 
 const StyledDiv = styled.div`
-  > button {
+  > * {
     margin-right: 3px;
   }
 `;
-const ButtonGroup: FunctionComponent<ButtonProps> = ({
+const ElementGroup: FunctionComponent<ElementGroupProps> = ({
   children,
-}: ButtonProps) => <StyledDiv>{children}</StyledDiv>;
+}: ElementGroupProps) => <StyledDiv>{children}</StyledDiv>;
 
-export default ButtonGroup;
+export default ElementGroup;
