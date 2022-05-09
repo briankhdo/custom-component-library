@@ -1,5 +1,5 @@
 import { DefaultTheme } from "styled-components";
-import { ThemeContext, ThemeProvider, useTheme } from "./Context";
+import { ThemeProvider, useTheme } from "./Context";
 import { colors } from "./colors";
 import spaces from "./spaces";
 
@@ -10,4 +10,4 @@ const defaultTheme: DefaultTheme = {
   spaces,
 };
 
-export { ThemeContext, ThemeProvider, useTheme, defaultTheme };
+export { ThemeProvider, useTheme, defaultTheme };
